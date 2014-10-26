@@ -1,0 +1,37 @@
+<!--ERB error_messages_for(@line) ERB Doesn't fockin work   -->
+
+<table summary="Line form fields">
+  <tr>
+    <th><%= f.label(:name, "Name") %></th>
+    <td><%= f.text_field(:name) %></td>
+  </tr>
+    <tr>
+    <th><%= f.label(:description, "Description") %></th>
+    <td><%= f.text_field(:description) %></td>
+  </tr>
+  </tr>
+    <tr>
+    <th><%= f.label(:gender, "Gender") %></th>
+    <td><%= f.select(:gender, options_for_select([
+      ["Male", "male"],
+      ["Female", "female"]
+      ["Unisex", "unisex"]
+    ])) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:position) %></th>
+    <td><%= f.select(:position, 1..@line_count) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:visible) %></th>
+    <td><%= f.check_box(:visible) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:permalink) %></th>
+    <td><%= f.text_field(:permalink) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:created_at) %></th>
+    <td><%= f.datetime_select(:created_at, :order => [:month, :day, :year]) %></td>
+  </tr>
+</table>

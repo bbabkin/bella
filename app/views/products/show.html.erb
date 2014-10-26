@@ -1,0 +1,38 @@
+<% @product_title = "Show Product" %>
+
+<%= link_to("<< Back to List", {:action => 'index', :line_id => @line.id}, :class => 'back-link') %>
+
+<div class="products show">
+  <h2>Show Product</h2>
+
+  <table summary="Product detail view">
+    <tr>
+      <th>Product Line</th>
+      <td><%= @product.line_id %></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <td><%= @product.name %></td>
+    </tr>
+    <tr>
+      <th>Volume</th>
+      <td><%= @product.volume %></td>
+    </tr>
+    <tr>
+      <th>Price</th>
+      <td><%= @product.price %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @product.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @product.updated_at %></td>
+    </tr>
+  </table>
+  <br/>
+    <h2>Desciption:</h2>
+      <p><%= @product.description %></p>
+
+</div>

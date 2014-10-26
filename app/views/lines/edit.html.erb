@@ -1,0 +1,17 @@
+<% @page_title = "Update Product Line" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="lines edit">
+  <h2>Update Product Line</h2>
+
+  <%= form_for(:line, :url => {:action => 'update', :id => @line.id}) do |f| %>
+
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Update Product Line") %>
+    </div>
+
+  <% end %>
+</div>

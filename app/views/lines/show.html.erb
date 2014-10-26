@@ -1,0 +1,31 @@
+<% @page_title = "Show Product Line" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="lines show">
+  <h2>Show Product Line</h2>
+
+  <table summary="Line detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @line.name %></td>
+    </tr>
+    <tr>
+      <th>Position</th>
+      <td><%= @line.position %></td>
+    </tr>
+    <tr>
+      <th>Visible?</th>
+      <td><%= @line.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @line.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @line.updated_at %></td>
+    </tr>
+  </table>
+
+</div>
