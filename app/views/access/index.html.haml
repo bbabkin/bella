@@ -1,0 +1,9 @@
+- @page_title = "Admin Menu"
+.menu
+  %h2 Admin Menu
+  .identity
+    Logged in as: #{session[:username]}
+  %ul
+    %li= link_to("Manage Content", :controller => 'lines')
+    %li= link_to("Manage Admin Users", :controller => 'admin_users')
+    %li= link_to("Logout", :action => 'logout')

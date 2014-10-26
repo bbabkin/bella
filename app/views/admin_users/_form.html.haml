@@ -1,0 +1,17 @@
+= error_messages_for(@admin_user)
+%table{:summary => "Admin user form fields"}
+  %tr
+    %th= f.label(:first_name)
+    %td= f.text_field(:first_name)
+  %tr
+    %th= f.label(:last_name)
+    %td= f.text_field(:last_name)
+  %tr
+    %th= f.label(:email)
+    %td= f.text_field(:email)
+  %tr
+    %th= f.label(:username)
+    %td= f.text_field(:username)
+  %tr
+    %th= f.label(:password)
+    %td= f.password_field(:password)

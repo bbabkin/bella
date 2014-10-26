@@ -8,12 +8,15 @@ Bella::Application.routes.draw do
   #   get "admin_users/delete"
 
   root "public#index"
+  resources :lines
+  resources :products
+  
 
   get 'show/:permalink', :to => 'public#show'
   get 'admin', :to => "access#index"
 
   #get "demo/index"
-  match ':controller(/:action(/:id))', :via => [:get, :post]
+  #match ':controller(/:action(/:id))', :via => [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

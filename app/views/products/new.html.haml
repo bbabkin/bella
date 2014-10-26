@@ -1,0 +1,8 @@
+- @page_title = "New Product"
+= link_to("<< Back to Product List", {:action => 'index', :line_id => @line.id}, :class => 'back-link')
+.products.new
+  %h2 Create Product
+  = form_for(:product, :url => {:action => 'create', :line_id => @line.id}) do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("Create Product")

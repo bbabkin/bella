@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title
+      Bellezza Naturale#{" | #{@product_title}" if @product_title}
+    = stylesheet_link_tag('application', :media => 'all')
+  %body
+    #header
+      %h1 Bellezza
+    #main
+      #navigation
+        = render(:partial => 'layouts/navigation', :locals => {:lines => @lines})
+      #content
+        = yield
+      .clear
+    #footer
+      %p#copyright &#169; Bellezza Naturale

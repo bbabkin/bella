@@ -1,0 +1,23 @@
+/error_messages_for(@line)
+%table{:summary => "Line form fields"}
+  %tr
+    %th= f.label(:name, "Name")
+    %td= f.text_field(:name)
+  %tr
+    %th= f.label(:description, "Description")
+    %td= f.text_field(:description)
+  %tr
+    %th= f.label :gender, "Gender"
+    %td= f.select :gender, ["female", "male", "unisex"]                     |
+  %tr
+    %th= f.label(:position)
+    %td= f.select(:position, 1..@line_count)
+  %tr
+    %th= f.label(:visible)
+    %td= f.check_box(:visible)
+  %tr
+    %th= f.label(:permalink)
+    %td= f.text_field(:permalink)
+  %tr
+    %th= f.label(:created_at)
+    %td= f.datetime_select(:created_at, :order => [:month, :day, :year])

@@ -44,7 +44,7 @@ class LinesController < ApplicationController
     if @line.update_attributes(line_params)
       # If update succeeds, redirect to the index action
       flash[:notice] = "Product Line updated successfully."
-      redirect_to(:action => 'show', :id => @line.id)
+      redirect_to(:action => 'index')
     else
       # If update fails, redisplay the form so user can fix problems
       @line_count = Line.count
@@ -69,7 +69,7 @@ class LinesController < ApplicationController
       # same as using "params[:line]", except that it:
       # - raises an error if :line is not present
       # - allows listed attributes to be mass-assigned
-      params.require(:line).permit(:name, :position, :visible, :created_at)
+      params.require(:line).permit(:name, :position, :gender, :description,:visible, :created_at)
     end
 
 end

@@ -1,0 +1,24 @@
+- @page_title = "Product Lines"
+.lines.index
+  %h2 Product Lines
+  = link_to(" Add New Product Line", {:action => 'new'}, :class => 'action new')
+  %div
+    = "#{pluralize(@lines.size, 'product line')} found"
+  %table.listing{:summary => "Product Line list"}
+    %tr.header
+      %th &#160;
+      %th Product Line
+      %th Visible
+      %th Product Amount
+      %th Actions
+    - @lines.each do |line|
+      %tr{:class => cycle('odd', 'even')}
+        %td= line.position
+        %td= line.name
+        %td.center= status_tag(line.visible)
+        %td.center= line.products.size
+        %td.actions
+          = link_to("View Products", {:controller => 'products', :line_id => line.id}, :class => 'action show')
+          = link_to("Show", {:action => 'show', :id => line.id}, :class => 'action show')
+          = link_to("Edit", {:action => 'edit', :id => line.id}, :class => 'action edit')
+          = link_to("Delete", {:action => 'delete', :id => line.id}, :class => 'action delete')
