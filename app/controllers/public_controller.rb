@@ -15,6 +15,14 @@ class PublicController < ApplicationController
     else
       # display the page content using show.html.erb
     end
+
+    @line = Line.where(:permalink => params[:permalink], :visible => true).first
+    if @line.nil?
+      redirect_to(:action => 'index')
+    else
+      # display the page content using show.html.erb
+    end
+
   end
 
   private

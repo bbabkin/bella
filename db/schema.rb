@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026180943) do
+ActiveRecord::Schema.define(version: 20141105192238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,13 +28,6 @@ ActiveRecord::Schema.define(version: 20141026180943) do
 
   add_index "admin_users", ["username"], name: "index_admin_users_on_username", using: :btree
 
-  create_table "admin_users_products", id: false, force: true do |t|
-    t.integer "admin_user_id"
-    t.integer "line_id"
-  end
-
-  add_index "admin_users_products", ["admin_user_id", "line_id"], name: "index_admin_users_products_on_admin_user_id_and_line_id", using: :btree
-
   create_table "lines", force: true do |t|
     t.string   "name"
     t.integer  "position"
@@ -44,6 +37,7 @@ ActiveRecord::Schema.define(version: 20141026180943) do
     t.datetime "updated_at"
     t.string   "description"
     t.string   "gender"
+    t.string   "color"
   end
 
   create_table "products", force: true do |t|
@@ -57,6 +51,7 @@ ActiveRecord::Schema.define(version: 20141026180943) do
     t.boolean  "visible",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   add_index "products", ["line_id"], name: "index_products_on_line_id", using: :btree

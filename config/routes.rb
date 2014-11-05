@@ -2,21 +2,42 @@ Bella::Application.routes.draw do
 
   # Don't need these auto-generated routes.
   # We are using default route.
-  #   get "admin_users/index"
-  #   get "admin_users/new"
-  #   get "admin_users/edit"
-  #   get "admin_users/delete"
+  get "admin_users/index"
+  get "admin_users/new"
+  get "admin_users/edit"
+  get "admin_users/delete"
+  get "public/show"
+  get "products/index"
+  get "products/show"
+
+  get 'show/:permalink', :to => 'lines#show'
 
   root "public#index"
-  resources :lines
-  resources :products
-  
+  resources :lines do
+    resources :products
+  end
 
-  get 'show/:permalink', :to => 'public#show'
-  get 'admin', :to => "access#index"
+  get 'admin', :to => "admin/access#index"
+  namespace :admin do
 
+    get 'show/:permalink', :to => 'public#show'
+    get 'line/:permalink', :to => 'lines#show'
+    post 'line/:permalink', :to => 'lines#show'
+    get 'logout', :to => "access#logout"
+    get 'login', :to => "access#login"
+    get 'attempt_login', :to => "access#attempt_login"
+    post 'attempt_login', :to => "access#attempt_login"
+    
+    
+    resources :lines do
+      resources :products
+
+      
+    end
+    resources :admin_users
+  end
   #get "demo/index"
-  #match ':controller(/:action(/:id))', :via => [:get, :post]
+  match ':controller(/:action(/:id))', :via => [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

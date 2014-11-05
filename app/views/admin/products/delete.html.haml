@@ -1,0 +1,9 @@
+- @page_title = "Delete Product"
+= link_to("<< Back to List", {:action => 'index', :line_id => @line.id}, :class => 'back-link')
+.products.delete
+  %h2 Delete Product
+  = form_for(:product, :method => :delete, :url => {:action => 'destroy', :id => @product.id, :line_id => @line.id}) do |f|
+    %p Are you sure you want to permanently delete this product?
+    %p.reference-name= @product.name
+    .form-buttons
+      = submit_tag("Delete Product")

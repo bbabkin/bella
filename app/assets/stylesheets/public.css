@@ -18,11 +18,12 @@ img { border: none; }
 table { border-collapse: collapse; }
 table tr th, table tr td { vertical-align: top; text-align: left;
   padding: 3px; }
-a, a:visited { color: #993120; }
+a, a:visited { color: #e8e8e8; }
 a:hover {}
 
 .clear { clear: both; }
 .center { text-align: center; }
+.mainbox { border: 1; border-color: black; border-width: 1px; width :960px; margin-left: auto; margin-right: auto; margin-top: auto; margin-bottom: auto;}
 
 /* Structure */
 #header { height: 4em; padding-top: 1em; text-align: center;

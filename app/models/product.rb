@@ -1,14 +1,11 @@
 class Product < ActiveRecord::Base
 
-
 	belongs_to :line
-  has_and_belongs_to_many :editors, :class_name => "AdminUser"
-
   acts_as_list :scope => :line
 
   before_validation :add_default_permalink
   after_save :touch_line
-
+  mount_uploader :image, ImageUploader # Tells rails to use this uploader for this model.
   validates_presence_of :name
   validates_length_of :name, :maximum => 255
   # use presence_of with length_of to disallow spaces

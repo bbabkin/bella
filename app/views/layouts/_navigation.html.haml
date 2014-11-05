@@ -1,5 +1,21 @@
-- lines ||= []
-%ul
-  - lines.each do |line|
-    %li
-      = line.name
+%nav.navbar.navbar-default{:role => "navigation"}
+	.container-fluid
+		.navbar-header
+			%button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+				%span.sr-only Toggle navigation
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+			%a.navbar-brand{:href => "#"} Brand
+		#bs-example-navbar-collapse-1.collapse.navbar-collapse
+			%ul.nav.navbar-nav
+				%li.active
+					%a{:href => "#"} About
+				%li.dropdown
+					%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+						Products
+						%span.caret
+					%ul.dropdown-menu{:role => "menu"}
+						- lines.each do |line|
+							%li
+								= link_to_unless_current(line.name, line_path(line))

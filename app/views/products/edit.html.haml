@@ -1,8 +1,0 @@
-- @page_title = "Edit Product"
-= link_to("<< Back to List", {:action => 'index', :line_id => @line.id}, :class => 'back-link')
-.products.edit
-  %h2 Update Product
-  = form_for(:product, :url => {:action => 'update', :id => @product.id, :line_id => @line.id}) do |f|
-    = render(:partial => "form", :locals => {:f => f})
-    .form-buttons
-      = submit_tag("Update Product")

@@ -1,0 +1,32 @@
+%table{:summary => "Product form fields"}
+  %tr
+    %th= f.label(:line_id, "Product Line")
+    %td= f.select(:line_id, @lines.map {|s| [s.name, s.id]})
+  %tr
+    %th= f.label(:position)
+    %td= f.select(:position, 1..@product_count)
+  %tr
+    %th= f.label(:name, "Name")
+    %td= f.text_field(:name)
+  %tr
+    %th= f.label(:volume)
+    %td= f.text_field(:volume)
+  %tr
+    %th= f.label(:price)
+    %td= f.text_field(:price)
+  %tr
+    %th= f.label(:description)
+    %td= f.text_area(:description, :size=> '40x10')
+  %tr
+    %th= f.label(:permalink)
+    %td= f.text_field(:permalink)
+  %tr
+    %th= f.label(:visible)
+    %td= f.check_box(:visible)
+  %tr
+    %th= f.label(:image)
+    %td= f.file_field(:image)
+    %td= f.submit "Save", class: "btn btn-primary"
+  %tr
+    %th Delete Product
+    /%td= button_to "Delete", @product.name, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete ?"

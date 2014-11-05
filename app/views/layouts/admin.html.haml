@@ -3,10 +3,11 @@
   %head
     %title
       Bellezza Naturale | #{@page_title || "Admin"}
-    = stylesheet_link_tag('application', :media => 'all')
+    = stylesheet_link_tag "application", media: 'all', "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
   %body
     #header
-      %h1 Bellezza Admin
+      %h3 Bellezza Admin
     #main
       - if !flash[:notice].blank?
         .notice

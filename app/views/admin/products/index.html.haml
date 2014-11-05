@@ -1,0 +1,28 @@
+- @page_title = "Products"
+= link_to("<< Back to Lines", {:controller => 'lines', :action => 'index'}, :class => 'back-link')
+.Products.index
+  %h2 Products
+  = link_to("Add New Product", {:action => 'new', :line_id => @line.id}, :class => 'action new')
+  %table.listing{:summary => "Product list"}
+    %tr.header
+      %th &#160;
+      %th Product Line
+      %th Product
+      %th Volume
+      %th Price
+      %th Image
+      %th Actions
+    - @products.each do |product|
+      %tr
+        %td= product.position
+        %td= product.line.name
+        %td= product.name
+        %td= product.volume
+        %td= product.price
+        %td=image_tag product.image.thumb.url
+        %td.actions
+          = link_to("Show", {:action => 'show', :id => product.id, line_id: @line.id}, class: "btn btn-primary")
+          = link_to("Edit", {:action => 'edit', :id => product.id, line_id: @line.id}, class: "btn btn-primary")
+          = link_to("Delete", {:action => 'delete', :id => product.id, :line_id => @line.id}, class: "btn btn-primary")
+
+
