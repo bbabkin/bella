@@ -26,7 +26,4 @@
   %tr
     %th= f.label(:image)
     %td= f.file_field(:image)
-    %td= f.submit "Save", class: "btn btn-primary"
-  %tr
-    %th Delete Product
-    /%td= button_to "Delete", @product.name, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete ?"
+  

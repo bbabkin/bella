@@ -30,7 +30,13 @@ Bella::Application.routes.draw do
     
     
     resources :lines do
+      member do
+        get :delete
+      end
       resources :products
+        member do
+          get :delete
+        end
 
       
     end

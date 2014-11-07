@@ -5,9 +5,10 @@
       Bellezza Naturale | #{@page_title || "Admin"}
     = stylesheet_link_tag "application", media: 'all', "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
+    :css
   %body
     #header
-      %h3 Bellezza Admin
+      %h2.headertext Bellezza Admin
     #main
       - if !flash[:notice].blank?
         .notice
@@ -15,4 +16,4 @@
       #content
         = yield
     #footer
-      %p#copyright &#169; bellezza.io
+      %p.footertext &#169; bellezza.io

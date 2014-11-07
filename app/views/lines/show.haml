@@ -1,19 +1,13 @@
 - @page_title = @line.name
-%h2= @line.name
-.Products.index
-  %h2 Products for this line:
-  %table.listing{:summary => "Product list"}
-    %tr.header
-      %th &#160;
-      %th Product Line
-      %th Product
-      %th Volume
-      %th Price
-    - @products.each do |product|
-      %tr
-        %td= product.position
-        %td= product.line.name
-        %td= product.name
-        %td= product.volume
-        %td= product.price
+.container.whitetext{:class => "c_" + @line.color}
+  .linepad
+    %h2.linename= @line.name
+    %h2 Products for this line:
+    %table.listing{:summary => "Product list"}
+      - @products.each do |product|
+        %tr
+          %td= image_tag product.image.linepreview.url
+          %td= product.name
+          %td= product.volume
+          %td= product.price
         

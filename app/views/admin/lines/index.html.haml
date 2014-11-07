@@ -1,7 +1,8 @@
 - @page_title = "Product Lines"
+= link_to("<< Back to Menu", {:controller => 'access', :action => 'index'}, :class => 'back-link')
 .lines.index
   %h2 Product Lines
-  = link_to(" Add New Product Line", {:action => 'new'}, :class => 'action new')
+  = link_to(" Add New Product Line", {:action => 'new'}, :class => 'btn btn-green btn-sm')
   %div
     = "#{pluralize(@lines.size, 'product line')} found"
   %table.listing{:summary => "Product Line list"}
@@ -13,15 +14,15 @@
       %th Line Color
       %th Actions
     - @lines.each do |line|
-      %tr{:class => cycle('odd', 'even')}
-        %td= line.position
-        %td= line.name
-        %td.center= status_tag(line.visible)
-        %td.center= line.products.size
+      %tr
+        %td.whitetext{:bgcolor => line.color}= line.position
+        %td.whitetext{:bgcolor => line.color}= line.name
+        %td.whitetext.center{:bgcolor => line.color}= status_tag(line.visible)
+        %td.whitetext.center{:bgcolor => line.color}= line.products.size
         %td.colors{:bgcolor => line.color} text
         %td.actions
 
-          = link_to("View Products", {:controller => 'products', :line_id => line.id}, class: "btn btn-primary")
-          = link_to("Show", line_path(line), class: "btn btn-primary")
-          = link_to("Edit", {:action => 'edit', :id => line.id}, class: "btn btn-primary")
-          = link_to("Delete", {:action => 'delete', :id => line.id}, class: "btn btn-primary")
+          = link_to("View Products", {:controller => 'products', :line_id => line.id}, class: "btn btn-green")
+          = link_to("Show", admin_line_path(line), class: "btn btn-green btn-sm")
+          = link_to("Edit", {:action => 'edit', :id => line.id, }, class: "btn btn-green btn-sm")
+          = link_to("Delete", {:action => 'delete', :id => line.id, }, class: "btn btn-green btn-sm")

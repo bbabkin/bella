@@ -2,32 +2,26 @@
 /* load after public.css */
 
 /* Structure */
-#content { padding-left: 100px; padding-right: 100px; }
+/*#content { padding-left: 100px; padding-right: 100px; }*/
 #content h2 { width: 100%; text-align: center; }
 
 .login form { margin: 100px 250px; }
 .menu .identity { text-align: center; }
-.menu ul { margin: 3em 250px; list-style: none; }
-.menu ul li { margin-bottom: 1em; }
+/*.menu ul { margin: 3em 250px; list-style: none; }*/
+/*.menu ul li { margin-bottom: 1em; }*/
 
 a { text-decoration: none; }
-a:visited { color: #e8e8e8; }
-a:hover { text-decoration: underline; }
 
-/* large action buttons */
-a.action { float: right; padding: 2px 5px; margin: 0 0 1em 1em;
-  background: #94B26F; color: #4C2516;  border: 1px solid #4C2516;
-  text-decoration: none; font-size: 0.8em; text-align: center; }
-a.action:hover { background: #B6D491; }
 
-/* small action buttons */
+
+.actions { width: 310px}
 .colors { color: #fff }
-.actions { width: 350px; }
-.actions a.action { float: left; min-width: 3.5em;
-  padding: 1px 2px; margin: 2px 5px; font-size: 0.7em; }
+.whitetext { color: #fff }
+.footertext { color: #fff; text-align: right; margin: 2em;}
+.headertext { color: #111; text-align: center; margin: 0.2em;}
 
 /* CRUD */
-.notice { height: 1.25em; padding: 0.5em; text-align: center;
+.notice { height: 2.25em; padding: 0.5em; text-align: center;
   background: #B6D491; color: #4C2516; }
 .back-link { font-size: 0.8em; margin-bottom: 1em; }
 .form-buttons { text-align: center; margin: 1em 0; }
@@ -44,13 +38,13 @@ a.action:hover { background: #B6D491; }
   border-top: 1px dotted #666666; }
 
 /* zebra striping for table rows */
-.odd { background: #E5CE69; }
+.odd { background: #eee; }
 .even { background: none; }
 
 /* status_tag */
-span.status { display: block; width: 10px; height: 10px;
-  margin: 0.25em auto; padding: 0; border: 1px solid #000000; }
-span.status.true  { background: green; color: green; }
+span.status { display: block; width: 15px; height: 30px;
+  margin: 0.15em auto; padding: 0; border: 1px solid #000000; }
+span.status.true  { background: #00ff00; color: green; }
 span.status.false { background: red; color: red; }
 
 /* Errors */
@@ -65,3 +59,13 @@ span.status.false { background: red; color: red; }
 #errorExplanation p { color: #333333; margin: 0; padding: 3px 0.5em; }
 #errorExplanation ul { margin-top: 0; }
 #errorExplanation ul li { list-style: square; }
+#header { height: 4em; padding-top: 1em; text-align: center;
+  background: #eee; color: #FFFFFF; }
+#header h1 { margin: 0; padding: 0; }
+#main { min-height: 500px; background: #fff; }
+/*#navigation { clear:both; padding: 10px;*/
+  background: #fff; color: #333; }
+#content { padding: 10px; }
+#footer { clear: both; height: 2.5em; text-align: right;
+  background: #222 url('/assets/footer_gradient.png') repeat-y 0 0; color: #F2DC87; }
+#footer p { margin: 0; padding: 0.5em 1em; }
